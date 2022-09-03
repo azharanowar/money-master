@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+body {
+    font-family: "Montserrat";
+}
+
+.left-img-section, .right-calculator-form-section {
+    height: 700px;
+}
+
+.calculator-form {
+    background-color: #E8E8E8;
+}
+
+.form-input-field {
+    background-color: #DCDCDC;
+}
