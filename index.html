@@ -22,27 +22,30 @@
                             <h4 class="fs-6 fw-semibold mb-3 text-center">Income</h4>
                             <div class="row g-3 mb-4 align-items-center justify-content-center">
                                 <div class="col-3">
-                                    <label class="form-label col-form-label">Income: </label>
+                                    <label class="form-label col-form-label">Income <span class="text-danger">*</span> : </label>
                                 </div>
                                 <div class="col-9">
-                                    <input type="number" class="form-control form-input-field" placeholder="Enter your income...">
+                                    <span class="text-danger small" id="incomeInputMessage"></span>
+                                    <input type="number" class="form-control form-input-field required" placeholder="Enter your income..." id="incomeInput">
                                 </div>
                             </div>
                             <h4 class="fs-6 fw-semibold mb-3 text-center">Expenses</h4>
                             <div class="row g-3 mb-3 align-items-center justify-content-center">
                                 <div class="col-3">
-                                    <label class="form-label col-form-label">Food: </label>
+                                    <label class="form-label col-form-label">Food <span class="text-danger">*</span> : </label>
                                 </div>
                                 <div class="col-9">
-                                    <input type="number" class="form-control form-input-field" placeholder="Enter your food cost...">
+                                    <span class="text-danger small" id="foodCostInputMessage"></span>
+                                    <input type="number" class="form-control form-input-field required" placeholder="Enter your food cost..." id="foodCostInput">
                                 </div>
                             </div>
                             <div class="row g-3 mb-3 align-items-center justify-content-center">
                                 <div class="col-3">
-                                    <label class="form-label col-form-label">Rent: </label>
+                                    <label class="form-label col-form-label">Rent <span class="text-danger">*</span> : </label>
                                 </div>
                                 <div class="col-9">
-                                    <input type="number" class="form-control form-input-field" placeholder="Enter your rent cost...">
+                                    <span class="text-danger small" id="rentCostInputMessage"></span>
+                                    <input type="number" class="form-control form-input-field required" placeholder="Enter your rent cost..." id="rentCostInput">
                                 </div>
                             </div>
                             <div class="row g-3 mb-3 align-items-center justify-content-center">
@@ -50,7 +53,7 @@
                                     <label class="form-label col-form-label">Clothes: </label>
                                 </div>
                                 <div class="col-9">
-                                    <input type="number" class="form-control form-input-field" placeholder="Enter your clothes cost...">
+                                    <input type="number" class="form-control form-input-field" placeholder="Enter your clothes cost..." id="clothesCostInput">
                                 </div>
                             </div>
                             <div class="row g-3 mb-3 align-items-center justify-content-center">
@@ -58,7 +61,7 @@
                                     
                                 </div>
                                 <div class="col-9">
-                                    <input type="button" class="form-control btn w-100 btn-primary text-uppercase py-2 fw-semibold" value="Calculate">
+                                    <input type="button" class="form-control btn w-100 btn-primary text-uppercase py-2 fw-semibold" value="Calculate" id="calculateBtn" disabled>
                                 </div>
                             </div>
 
@@ -70,7 +73,7 @@
                             </h6>
                             <h6 class="row justify-content-between align-items-center fw-semibold mb-4">
                                 <span class="col-6">Balance Left: </span>
-                                <span class="col-6 text-end">$<span id="totalExpensesAmount">00</span></span>
+                                <span class="col-6 text-end">$<span id="balenceLeftAmount">00</span></span>
                             </h6>
 
                             <h4 class="fs-6 fw-semibold mb-3 text-center">Savings</h4>
@@ -79,13 +82,13 @@
                                     <label class="form-label col-form-label">Save: </label>
                                 </div>
                                 <div class="col-4">
-                                    <input type="number" class="form-control form-input-field" placeholder="Percentage...">
+                                    <input type="number" class="form-control form-input-field" placeholder="Percentage..." id="savePercentageInput">
                                 </div>
                                 <div class="col-1">
                                     <label class="form-label col-form-label fw-bold">%</label>
                                 </div>
                                 <div class="col-4">
-                                    <input type="button" class="form-control btn w-100 btn-primary text-uppercase py-2 fw-semibold" value="Save">
+                                    <input type="button" class="form-control btn w-100 btn-primary text-uppercase py-2 fw-semibold" value="Save" id="saveBtn" disabled>
                                 </div>
                             </div>
 
@@ -93,11 +96,11 @@
 
                             <h6 class="row justify-content-between align-items-center fw-semibold">
                                 <span class="col-6">Saving Amount: </span>
-                                <span class="col-6 text-end">$<span id="totalExpensesAmount">00</span></span>
+                                <span class="col-6 text-end">$<span id="savingAmount">00</span></span>
                             </h6>
                             <h6 class="row justify-content-between align-items-center fw-semibold mb-4">
-                                <span class="col-6">Balance Left: </span>
-                                <span class="col-6 text-end">$<span id="totalExpensesAmount">00</span></span>
+                                <span class="col-6">Remaining Balance: </span>
+                                <span class="col-6 text-end">$<span id="remainingBalaceAmount">00</span></span>
                             </h6>
 
                         </form>
@@ -106,5 +109,7 @@
             </div>
         </section>
     </main>
+
+<script src="assets/js/app.js"></script>
 </body>
 </html>
