@@ -19,7 +19,7 @@ document.getElementById("clothesCostInput").addEventListener('keyup', function()
 
 document.getElementById("calculateBtn").addEventListener('click', function() {
     const totalExpenses = totalExpensesCalculation();
-    console.log(totalExpenses);
+    const totalBalanceLeft = balanceLeftCalculation( totalExpenses );
 });
 
 
@@ -29,11 +29,26 @@ function totalExpensesCalculation() {
     const expensesInputFields = document.getElementsByClassName("expenses-input-fields");
     for ( const expensesInputField of expensesInputFields ) {
         if ( expensesInputField.value && !isNaN(expensesInputField.value) ) {
-            totalExpenses += parseInt( expensesInputField.value );
+            totalExpenses += parseFloat( expensesInputField.value );
         }
     }
 
-    return totalExpenses;
+    return document.getElementById("totalExpensesAmount").innerText = totalExpenses;
+}
+
+function balanceLeftCalculation( totalExpenses ) {
+    const incomeInput = document.getElementById("incomeInput");
+    let totalIncomeAmount = parseFloat( incomeInput.value );
+    if ( totalIncomeAmount > totalExpenses ) {
+        totalIncomeAmount -= totalExpenses;
+        return document.getElementById("balenceLeftAmount").innerText = totalIncomeAmount;
+    } else {
+        document.getElementById("expensesErrorMessage").innerText = "Expenses can't be more than your income!!!";
+        document.getElementById("totalExpensesAmount").innerText = "00";
+        document.getElementById("balenceLeftAmount").innerText = "00";
+        document.getElementById("calculateBtn").disabled = true;
+        return;
+    }
 }
 
 function inputFieldValueValidation( inputFieldId, messageElementId ) {
