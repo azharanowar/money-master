@@ -76,7 +76,6 @@ function inputFieldValueValidation( inputFieldId, messageElementId ) {
     if ( inputFieldValue === "" && inputField.classList.contains('required') ) {
         document.getElementById( messageElementId ).innerText = "This field can't be empty!!!";
         document.getElementById( inputFieldId ).style.border = "2px solid #DC3545";
-        document.getElementById("calculateBtn").disabled = true;
         
     } else if ( isNaN( inputFieldValue ) || inputFieldValue < 0 ) {
         document.getElementById( messageElementId ).innerText = "Input field most be a positive number!!!";
@@ -85,7 +84,6 @@ function inputFieldValueValidation( inputFieldId, messageElementId ) {
     } else {
         document.getElementById( messageElementId ).innerText = "";
         document.getElementById( inputFieldId ).style.border = "";
-        document.getElementById("calculateBtn").disabled = false;
     }
 
     return;
